@@ -2,7 +2,6 @@
 #include <string>
 #include <sstream>
 #include <algorithm>
-
 #include "Timer.h"
 
 using namespace std;
