@@ -9,26 +9,26 @@
 
 using namespace std;
 
-/* - In this program, we let users create a Timerlist array 
-   containing some Timer objects.
-   - Then, we provide 3 tests for users to check:
-      1. Arithmetic test
-      2. Comparison test
-      3. Big 3 test
-   - For the Arithmetic test, users can select a Timer object in the array
-   and an integer. They then choose to add the integer to the Timer object or 
-   subtract it from the Timer object. Alternatively, they can also choose a Timer object to 
-   increment or decrement.
-   - For the Comparison Test, users can select 2 Timer objects in the array
-   to compare (==, !=, < , >). The program will output the right answer based on the operators.
-   - For the Big 3 test, users can select one of the three options
-   (destructor, copy constructor, and assignment operator) to see what happens to 
-   the class objects.
+/* - In this program, we let users create a TimerList array 
+   	containing some Timer objects.
+   	- Then, we provide 3 tests for users to check:
+      	1. Arithmetic test
+      	2. Comparison test
+      	3. Big 3 test
+   	- For the Arithmetic test, users can select a Timer object in the array
+   	and an integer. They then choose to add the integer to the Timer object or 
+   	subtract it from the Timer object. Alternatively, they can also choose a Timer object to 
+   	increment or decrement.
+   	- For the Comparison Test, users can select 2 Timer objects in the array
+   	to compare (==, !=, < , >). The program will output the right answer based on the operators.
+   	- For the Big 3 test, users can select one of the three options
+   	(destructor, copy constructor, and assignment operator) to see what happens to 
+   	the class objects.
 */
 
 
 /* Some important functions that are used in this program
-   Definitions and implementations are provided at the end */
+   	Definitions and implementations are provided at the end */
 
 void input_array(TimerList<int>& timelist, int size);
 void output_array(TimerList<int>& timelist, int size);
@@ -42,23 +42,24 @@ int main() {
 	cout << "*****WELCOME*****\n";
 	sleep(1);
 
-   // Input the total capacity for the array
+   	// Input the total capacity for the array
 	do {
 		cout << "Enter the number of timers to collect: ";
 		cin >> numTimers;
 	} while (numTimers < 0);
 
-   // Create a Timerlist object and get input from users
+
+   	// Create a TimerList object and get input from users
 	TimerList<int> timelist(numTimers);
 	input_array(timelist, numTimers);
 	
-   // Show the array just inputted
+   	// Show the array just inputted
 	cout << "\nYour timelist array is:\n";
 	output_array(timelist, numTimers);
 
 	sleep(1);
 
-   // Provide 3 tests for users
+   	// Provide 3 tests for users
 	char option;
 	do {
 		cout << "\nCHOOSE 1 TEST FROM THE LIST OR ENTER Q TO QUIT:\n";
@@ -66,8 +67,8 @@ int main() {
 		cin >> option;
 		if (option == 'Q') break;
 		if (option != 'A' && option != 'C' && option != 'B') {
-      	continue;
-      }
+      		continue;
+      	}
 		if (option == 'A') {
 			arithmetic_test(timelist);
 		} else if (option == 'C') {
@@ -109,10 +110,10 @@ void output_array(TimerList<int>& timelist, int size) {
 }
 
 /* This function starts the Arithmetic Test
-   If users choose '+' -> add the selected Timer object to the inputted amount
-   If users choose '-' -> subtract the selected Timer object from the inputted amount
-   If users choose 'i' -> increment the selected Timer object by 1 second
-   If users choose 'd' -> decrement the selected Timer object by 1 second
+   	If users choose '+' -> add the selected Timer object to the inputted amount
+   	If users choose '-' -> subtract the selected Timer object from the inputted amount
+   	If users choose 'i' -> increment the selected Timer object by 1 second
+   	If users choose 'd' -> decrement the selected Timer object by 1 second
 */
 void arithmetic_test(TimerList<int>& timelist) {
 	cout << "\n*****ARITHMETIC TEST*****\n";
@@ -120,46 +121,46 @@ void arithmetic_test(TimerList<int>& timelist) {
 	char oper;
 
    do {
-      cout << "\nEnter arithmetic operator [+, -, i(ncrement), d(ecrement)]: ";
-      cin >> oper;
-      if (oper == 'q') break;
-      if (oper != '+' && oper != '-' && oper != 'i' && oper != 'd') {
-      	continue;
-      }
-      cout << "Enter the index of the timer you want to use: ";
-      int id;
-      cin >> id;
-      cout << "Your selected timer is: " << timelist[id - 1] << '\n';
-      if (oper == '+') {
-         cout << "Enter the number of seconds to add: ";
-         int amount;
-         cin >> amount;
-         cout << "The result is: " << timelist[id - 1] + amount << '\n';
-      }
-      else if (oper == '-') {
-      	cout << "Enter the number of seconds to substract: ";
-         int amount;
-         cin >> amount;
-         cout << "The result is: " << timelist[id - 1] - amount << '\n';
-      }
-      else if (oper == 'i') {
-      	++timelist[id - 1];
-      	cout << "Your selected timer now becomes: " << timelist[id - 1]<< '\n';
-      }
-      else if (oper == 'd') {
-      	--timelist[id - 1];
-      	cout << "Your selected timer now becomes: " << timelist[id - 1] << '\n';
-      }
-      cout << "Enter 'c' to continue, or 'q' to quit: ";
-      char c; cin >> c;
-      if (c == 'q') break;
-   } while (true);
+      	cout << "\nEnter arithmetic operator [+, -, i(ncrement), d(ecrement)]: ";
+      	cin >> oper;
+      	if (oper == 'q') break;
+      	if (oper != '+' && oper != '-' && oper != 'i' && oper != 'd') {
+      		continue;
+      	}
+      	cout << "Enter the index of the timer you want to use: ";
+      	int id;
+      	cin >> id;
+      	cout << "Your selected timer is: " << timelist[id - 1] << '\n';
+      	if (oper == '+') {
+         	cout << "Enter the number of seconds to add: ";
+         	int amount;
+         	cin >> amount;
+         	cout << "The result is: " << timelist[id - 1] + amount << '\n';
+      	}
+      	else if (oper == '-') {
+      		cout << "Enter the number of seconds to substract: ";
+         	int amount;
+         	cin >> amount;
+         	cout << "The result is: " << timelist[id - 1] - amount << '\n';
+      	}
+      	else if (oper == 'i') {
+      		++timelist[id - 1];
+      		cout << "Your selected timer now becomes: " << timelist[id - 1]<< '\n';
+      	}
+      	else if (oper == 'd') {
+      		--timelist[id - 1];
+      		cout << "Your selected timer now becomes: " << timelist[id - 1] << '\n';
+      	}
+      	cout << "Enter 'c' to continue, or 'q' to quit: ";
+      	char c; cin >> c;
+      	if (c == 'q') break;
+   	} while (true);
 }
 
 /* This fucntion starts the Comparison Test
-   Users will select 2 Timer objects from the array
-   They will then select a comparison operator to test
-   The program will output the desired result
+   	Users will select 2 Timer objects from the array
+   	They will then select a comparison operator to test
+   	The program will output the desired result
 */
 void comparison_test(TimerList<int>& timelist) {
 	cout << "\n*****COMPARISON TEST*****\n";
@@ -170,47 +171,47 @@ void comparison_test(TimerList<int>& timelist) {
 	}
 	string oper;
 
-   do {
-      cout << "\nEnter comparison operator [==, !=, <, >]: ";
-      cin >> oper;
-      if (oper == "q") break;
-     	if (oper != "==" && oper != "!=" && oper != "<" && oper != ">") {
-      	continue;
-      }
+   	do {
+      	cout << "\nEnter comparison operator [==, !=, <, >]: ";
+      	cin >> oper;
+      	if (oper == "q") break;
+     		if (oper != "==" && oper != "!=" && oper != "<" && oper != ">") {
+      			continue;
+      		}
 
-      cout << "Enter 2 indices of the timers you want to use: ";
-      int id1, id2;
-      cin >> id1 >> id2;
-      if (id1 > size || id2 > size) {
-      	cout << "Out of range\n";
-      	continue;
-      }
-      cout << "Your selected Timer1 is: " << timelist[id1 - 1] << '\n';
-      cout << "Your selected Timer2 is: " << timelist[id2 - 1] << '\n';
-
-      sleep(1);
-      
-      if (oper == "==" || oper == "!=") {
-         cout << (timelist[id1 - 1] == timelist[id2 - 1] ? "They are equal!" : "They are not equal!");
-         cout << '\n';
-      }
-      else if (oper == "<" || oper == ">") {
-      	if (timelist[id1 - 1] < timelist[id2 - 1]) {
-      		cout << "Timer1 is smaller than Timer2!\n";
-      	} else {
-      		cout << (timelist[id1 - 1] == timelist[id2 - 1] 
-      					? "They are equal!" : "Timer1 is larger than Timer2!");
-         cout << '\n';
+      	cout << "Enter 2 indices of the timers you want to use: ";
+      	int id1, id2;
+      	cin >> id1 >> id2;
+      	if (id1 > size || id2 > size) {
+      		cout << "Out of range\n";
+      		continue;
       	}
-      }
-      cout << "Enter 'c' to continue, or 'q' to quit: ";
-      char c; cin >> c;
-      if (c == 'q') break;
-   } while (true);
+      	cout << "Your selected Timer1 is: " << timelist[id1 - 1] << '\n';
+      	cout << "Your selected Timer2 is: " << timelist[id2 - 1] << '\n';
+
+      	sleep(1);
+      
+      	if (oper == "==" || oper == "!=") {
+         	cout << (timelist[id1 - 1] == timelist[id2 - 1] ? "They are equal!" : "They are not equal!");
+         	cout << '\n';
+      	}
+      	else if (oper == "<" || oper == ">") {
+      		if (timelist[id1 - 1] < timelist[id2 - 1]) {
+      			cout << "Timer1 is smaller than Timer2!\n";
+      		} else {
+      			cout << (timelist[id1 - 1] == timelist[id2 - 1] 
+      					? "They are equal!" : "Timer1 is larger than Timer2!");
+         		cout << '\n';
+      		}
+      	}
+      	cout << "Enter 'c' to continue, or 'q' to quit: ";
+      	char c; cin >> c;
+      	if (c == 'q') break;
+   	} while (true);
 }
 
 /* This functions starts the Big 3 Test
-   Details of each test are given inside the function
+   	Details of each test are given inside the function
 */
 void big_three_test(TimerList<int>& timelist) {
 	cout << "\n*****BIG 3 TEST*****\n";
@@ -223,17 +224,17 @@ void big_three_test(TimerList<int>& timelist) {
 		cin >> oper;
 
 		if (oper != 'A' && oper != 'C' && oper != 'D') {
-      	continue;
-      }
+      		continue;
+      	}
 
-      sleep(1);
+      	sleep(1);
 
-      /* Assignment operator check:
-         - The program first creates a new_timelist array and gets input from users
-         - Then, it assigns the new_timelist array to the original time_list array
-         - Finally, the program outputs the new_timelist array to show that the 
-         new_timelist array has been set equal to the original time_list array
-      */
+      	/* Assignment operator check:
+         	- The program first creates a new_timelist array and gets input from users
+         	- Then, it assigns the new_timelist array to the original time_list array
+         	- Finally, the program outputs the new_timelist array to show that the 
+         	new_timelist array has been set equal to the original time_list array
+      	*/
 		if (oper == 'A') {
 			cout << "Create a new array new_timelist\n";
 			cout << "Enter the size of new_timelist: ";
@@ -250,12 +251,12 @@ void big_three_test(TimerList<int>& timelist) {
 			output_array(new_timelist, new_timelist.size());
 		} 
 
-      /* Copy Constructor check:
-         - The program creates a new_timelist array and set it equal to the original
-         time_list array immediately.
-         - Then, the program outputs the new_timelist array to show that the
-         new_timelist array has been set equal to the original time_list array
-      */
+      	/* Copy Constructor check:
+         	- The program creates a new_timelist array and set it equal to the original
+         	time_list array immediately.
+         	- Then, the program outputs the new_timelist array to show that the
+         	new_timelist array has been set equal to the original time_list array
+      	*/
 		else if (oper == 'C') {
 			cout << "We create a new array new_timelist and set it equals to timelist\n";
 			TimerList<int> new_timelist = timelist;
@@ -264,11 +265,11 @@ void big_three_test(TimerList<int>& timelist) {
 			output_array(new_timelist, new_timelist.size());
 		}
 
-      /* Destructor check:
-         - The program creates a new_timelist pointer from the TempList class
-         - Then, the program uses the keyword delete to free the memory
-         - If the pointer is now nullptr, then the memory has been freed correctly
-      */
+      	/* Destructor check:
+         	- The program creates a new_timelist pointer from the TimerList class
+         	- Then, the program uses the keyword delete to free the memory
+         	- If the pointer is now nullptr, then the memory has been freed correctly
+      	*/
 		else if (oper == 'D') {
 			cout << "Create a new object pointer new_timelist and then delete it\n";
 			TimerList<int>* new_timelist = new TimerList<int>(1);
@@ -283,8 +284,7 @@ void big_three_test(TimerList<int>& timelist) {
 		}
 		sleep(1);
 		cout << "Enter 'c' to continue, or 'q' to quit: ";
-      char c; cin >> c;
-      if (c == 'q') break;
+      	char c; cin >> c;
+      	if (c == 'q') break;
 	} while (true);
-	
 }

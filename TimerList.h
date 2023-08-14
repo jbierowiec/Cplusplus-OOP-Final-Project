@@ -2,7 +2,6 @@
 #include <assert.h>
 #include <unistd.h>
 #include <sys/time.h>
-
 #include "Timer.h"
 
 using namespace std;
