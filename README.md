@@ -87,10 +87,9 @@ Testing the functions in the list class was challenging, sepcifically for the Bi
 To summarize the files for the program here I provide a summary of each:
 * Measurement.h – contains the _Measurement_ interface declaration.
 * Timer.h – contains the _Timer_ class declaration derived from _Measurement_.
-* Timer.cpp - contains implementation of _Timer_ functions and operators.
 * TimerList.h - contains the _TimerList_ class declaration, uses dynamic allocation of an array of _Timer_ instances and implements the Big Three.
-* TimerList.cpp - contains the _TimerList_ class definition, uses dynamic allocation of an array of _Timer_ instances and implements the Big Three.
-* timer_test.cpp – a test program that reads _Timer_ objects, tests the different functions and operators and adds the _Timer_ to a _TimerList_.
+* Timer.cpp - contains implementation of _Timer_ functions and operators.
+* TEST_DRIVE.cpp – a test program that reads _Timer_ objects, tests the different functions and operators and adds the _Timer_ to a _TimerList_.
 * test_data.txt - contains data for a test run of the program.
 
 The full code can be viewed in the files provided.
