@@ -9,7 +9,7 @@
 
 using namespace std;
 
-/* - In this program, we let users create a Templist array 
+/* - In this program, we let users create a Timerlist array 
    containing some Timer objects.
    - Then, we provide 3 tests for users to check:
       1. Arithmetic test
@@ -30,11 +30,11 @@ using namespace std;
 /* Some important functions that are used in this program
    Definitions and implementations are provided at the end */
 
-void input_array(TempList<int>& timelist, int size);
-void output_array(TempList<int>& timelist, int size);
-void arithmetic_test(TempList<int>& timelist);
-void comparison_test(TempList<int>& timelist);
-void big_three_test(TempList<int>& timelist);
+void input_array(TimerList<int>& timelist, int size);
+void output_array(TimerList<int>& timelist, int size);
+void arithmetic_test(TimerList<int>& timelist);
+void comparison_test(TimerList<int>& timelist);
+void big_three_test(TimerList<int>& timelist);
 
 int main() {
 	int numTimers = 0;
@@ -48,8 +48,8 @@ int main() {
 		cin >> numTimers;
 	} while (numTimers < 0);
 
-   // Create a Templist object and get input from users
-	TempList<int> timelist(numTimers);
+   // Create a Timerlist object and get input from users
+	TimerList<int> timelist(numTimers);
 	input_array(timelist, numTimers);
 	
    // Show the array just inputted
@@ -81,7 +81,7 @@ int main() {
 }
 
 // This function lets users input some Timer objects to the array
-void input_array(TempList<int>& timelist, int size) {
+void input_array(TimerList<int>& timelist, int size) {
 	for (int i = 0; i < size; i++) {
 		cout << "Enter Timer" << i + 1 << " (hours:minutes:seconds): ";
 		Timer time;
@@ -101,7 +101,7 @@ void input_array(TempList<int>& timelist, int size) {
 }
 
 // This function outputs the array (simple)
-void output_array(TempList<int>& timelist, int size) {
+void output_array(TimerList<int>& timelist, int size) {
 	for (int i = 0; i < size; i++) {
 		cout << "Timer #" << i + 1 << ": ";
 		cout << timelist[i] << '\n';
@@ -114,7 +114,7 @@ void output_array(TempList<int>& timelist, int size) {
    If users choose 'i' -> increment the selected Timer object by 1 second
    If users choose 'd' -> decrement the selected Timer object by 1 second
 */
-void arithmetic_test(TempList<int>& timelist) {
+void arithmetic_test(TimerList<int>& timelist) {
 	cout << "\n*****ARITHMETIC TEST*****\n";
 	int size = timelist.size();
 	char oper;
@@ -161,7 +161,7 @@ void arithmetic_test(TempList<int>& timelist) {
    They will then select a comparison operator to test
    The program will output the desired result
 */
-void comparison_test(TempList<int>& timelist) {
+void comparison_test(TimerList<int>& timelist) {
 	cout << "\n*****COMPARISON TEST*****\n";
 	int size = timelist.size();
 	if (size < 2) {
@@ -212,7 +212,7 @@ void comparison_test(TempList<int>& timelist) {
 /* This functions starts the Big 3 Test
    Details of each test are given inside the function
 */
-void big_three_test(TempList<int>& timelist) {
+void big_three_test(TimerList<int>& timelist) {
 	cout << "\n*****BIG 3 TEST*****\n";
 	int size = timelist.size();
 	char oper;
@@ -239,7 +239,7 @@ void big_three_test(TempList<int>& timelist) {
 			cout << "Enter the size of new_timelist: ";
 			int new_size; cin >> new_size;
 
-			TempList<int> new_timelist(new_size);
+			TimerList<int> new_timelist(new_size);
 			input_array(new_timelist, new_size);
 
 			cout << "Now, we assign new_timelist = timelist\n";
@@ -258,7 +258,7 @@ void big_three_test(TempList<int>& timelist) {
       */
 		else if (oper == 'C') {
 			cout << "We create a new array new_timelist and set it equals to timelist\n";
-			TempList<int> new_timelist = timelist;
+			TimerList<int> new_timelist = timelist;
 			sleep(1);
 			cout << "The array new_timelist becomes: \n";
 			output_array(new_timelist, new_timelist.size());
@@ -271,7 +271,7 @@ void big_three_test(TempList<int>& timelist) {
       */
 		else if (oper == 'D') {
 			cout << "Create a new object pointer new_timelist and then delete it\n";
-			TempList<int>* new_timelist = new TempList<int>(1);
+			TimerList<int>* new_timelist = new TimerList<int>(1);
 			delete new_timelist;
 
 			new_timelist = nullptr;
